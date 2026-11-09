@@ -1,0 +1,5 @@
+department,baseline_peak_regular_crews,baseline_crews_hired,baseline_seasonal_crew_months,baseline_minimum_on_time_rate,baseline_overall_on_time_rate,baseline_year_end_backlog,baseline_annual_cost,optimized_peak_regular_crews,optimized_crews_hired,optimized_crews_released,optimized_seasonal_crew_months,optimized_minimum_on_time_rate,optimized_overall_on_time_rate,optimized_year_end_backlog,optimized_annual_cost,annual_cost_savings,cost_reduction_percent
+BTDT,24,6,0,1.0,1.0,0,2475000.0,22,4,0,0,0.8776371308016878,0.972685403722746,0,2389486.6666666665,85513.33333333349,0.03455084175084181
+ISD,23,7,0,0.9606862044317369,0.9970069656073138,0,2906100.0,20,4,0,0,0.7649082568807339,0.9009033521985198,0,2638086.6666666665,268013.3333333335,0.09222440154617305
+PARK,10,0,40,1.0,1.0,0,1720000.0,10,0,0,38,0.9619047619047619,0.9921732899740947,0,1696840.0,23160.0,0.013465116279069768
+PWDx,73,23,0,0.9536062968288807,0.9962722192154024,0,8072260.0,68,18,10,0,0.9109307045520441,0.9771346561988798,0,7821033.333333333,251226.66666666698,0.03112222186434369

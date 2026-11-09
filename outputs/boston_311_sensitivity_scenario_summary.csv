@@ -1,0 +1,4 @@
+scenario,annual_demand,annual_cost,total_regular_hires,total_regular_releases,seasonal_crew_months,minimum_on_time_rate,year_end_backlog
+Low (-20%),223476,12297286.666666666,11,18,30,0.72831541218638,0
+Baseline,279343,14545446.666666666,26,10,38,0.7649082568807339,0
+High (+20%),335210,17394933.333333336,49,13,45,0.7262337662337662,0

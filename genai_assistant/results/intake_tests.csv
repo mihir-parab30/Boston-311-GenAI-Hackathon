@@ -1,0 +1,36 @@
+message,expected_type,expected_department,expect_followup,labels_ok,pred_type,pred_department,pred_queue,queue_depends_on_location,confidence,asked_followup,follow_up_question,retrieval_hit
+there's a big hole on Centre St near the T stop,Request for Pothole Repair,PWDx,False,True,Catchbasin,PWDx,PWDx_Roadway Repair_ARP_Resurfacing,True,high,False,,False
+my car hit a massive pothole on Blue Hill Ave and popped a tire,Request for Pothole Repair,PWDx,False,True,Request for Pothole Repair,PWDx,PWDx_Contractor Complaints,True,high,False,,True
+they never picked up the old couch I put out for bulk pickup,Missed Trash/Recycling/Yard Waste/Bulk Item|Schedule a Bulk Item Pickup,PWDx,False,True,Missed Trash/Recycling/Yard Waste/Bulk Item,PWDx,PWDx_Missed Trash\Recycling\Yard Waste\Bulk Item,False,high,False,,True
+I want to schedule a bulk item pickup for my broken dresser,Schedule a Bulk Item Pickup|Schedule a Bulk Item Pickup SS,PWDx,False,True,Schedule a Bulk Item Pickup,PWDx,PWDx_Schedule a Bulk Item Pickup,False,high,False,,True
+"I need a new recycling cart, mine is cracked",Request for Recycling Cart,PWDx,False,True,Request for Recycling Cart,PWDx,PWDx_Recycling Sent to Contractor,False,high,False,,True
+the streetlight outside my building has been out for days,Street Light Outages,PWDx,False,True,Street Light Outages,PWDx,PWDx_Street Light Outages,False,high,False,,True
+a car crashed into a light pole and knocked it over,Street Light Knock Downs,PWDx,False,True,Street Light Knock Downs,PWDx,PWDx_Street Light Knock Downs,False,high,False,,True
+the sidewalk on my block is cracked and someone could trip,Sidewalk Repair (Make Safe)|Sidewalk Repair,PWDx,False,True,Sidewalk Repair (Make Safe),PWDx,PWDx_Sidewalk Repair,False,high,False,,True
+neighbors leave their trash barrels on the sidewalk all day,Improper Storage of Trash (Barrels),PWDx,False,True,Improper Storage of Trash (Barrels),PWDx,PWDx_Code Enforcement,False,high,False,,True
+there's a dead raccoon in the middle of the road,Pick up Dead Animal,PWDx,False,True,Pick up Dead Animal,PWDx,PWDx_District 04: Allston/Brighton,True,high,False,,True
+someone spray painted graffiti on the side of my building,PWD Graffiti|Graffiti Removal,PWDx,False,True,Graffiti Removal,PARK,PARK_Graffiti,False,high,False,,True
+somebody dumped a mattress and old tires in the alley,Illegal Dumping,PWDx,False,True,Illegal Dumping,PWDx,PWDx_Code Enforcement,False,high,False,,True
+the sidewalk in front of the building next door was never shoveled,Unshoveled Sidewalk,PWDx,False,True,Unshoveled Sidewalk,PWDx,PWDx_Code Enforcement,False,high,False,,True
+the vacant lot next door is overgrown with weeds and garbage,Poor Conditions of Property|Trash on Vacant Lot,PWDx,False,True,Trash on Vacant Lot,PWDx,PWDx_Code Enforcement,False,high,False,,True
+a manhole cover in the road is loose and clanks every time a car goes over it,Utility Casting Repair,PWDx,False,True,Utility Casting Repair,PWDx,PWDx_Utility Casting Repair,False,high,False,,True
+a car is parked in front of my driveway and I can't get out,Parking Enforcement,BTDT,False,True,Parking Enforcement,BTDT,BTDT_Parking Enforcement,False,high,False,,True
+someone has been parked in the bike lane all day,Parking Enforcement,BTDT,False,True,Parking Enforcement,BTDT,BTDT_Parking Enforcement,False,high,False,,True
+the traffic light at my intersection is stuck on red,Traffic Signal Inspection|Traffic Signal Repair,BTDT,False,True,Traffic Signal Repair,BTDT,BTDT_Traffic Signal_Graffiti,False,high,False,,True
+the stop sign on our corner got knocked down,Sign Repair|Missing Sign,BTDT,False,True,Missing Sign,BTDT,BTDT_Sign Shop_Sign Installation,False,high,False,,True
+there's an abandoned car on my street that hasn't moved in months,Abandoned Vehicles,BTDT,False,True,Abandoned Vehicles,BTDT,BTDT_AVRS Interface Queue,False,high,False,,True
+the parking meter on my street is broken,Parking Meter Repairs,BTDT,False,True,Parking Meter Repairs,BTDT,BTDT_Broken Meter Complaints,False,high,False,,True
+a big tree branch fell and is blocking the path in the park,Tree Emergencies,PARK,False,True,Tree Emergencies,PARK,PARK_Tree Emergencies,False,high,False,,True
+a tree on my street looks dead and could fall on the house,Tree Maintenance Requests|Tree Emergencies,PARK,False,True,Tree Emergencies,PARK,PARK_Tree Emergencies,False,high,False,,True
+I'd like the city to plant a tree in front of my house,New Tree Requests,PARK,False,True,New Tree Requests,PARK,PARK_New Tree Requests,False,high,False,,True
+the swing set at the playground is broken,Equipment Repair,PARK,False,True,Equipment Repair,PARK,PARK_Maintenance_Trades,True,high,False,,True
+the grass in our neighborhood park hasn't been mowed all summer,Ground Maintenance,PARK,False,True,Ground Maintenance,PARK,PARK_Maintenance_Region 1,True,high,False,,True
+we have no heat in our apartment and the landlord won't respond,Heat - Excessive Insufficient,ISD,False,True,Heat - Excessive Insufficient,ISD,ISD_Housing (INTERNAL),False,high,False,,True
+my landlord won't fix the mold and water leaks in the bathroom,Unsatisfactory Living Conditions|Chronic Dampness/Mold,ISD,False,True,Chronic Dampness/Mold,ISD,ISD_Housing (INTERNAL),False,high,False,,True
+I keep seeing rats in my backyard,Rodent Activity,ISD,False,True,Rodent Activity,ISD,ISD_Environmental Services (INTERNAL),False,high,False,,True
+the stairs in my apartment building are broken and unsafe,Unsafe Dangerous Conditions|Maintenance Complaint - Residential,ISD,False,True,Unsafe Dangerous Conditions,ISD,ISD_Building (INTERNAL),False,high,False,,True
+a contractor next door is doing construction without a permit,Work w/out Permit,ISD,False,True,Work w/out Permit,ISD,ISD_Building (INTERNAL),False,high,False,,True
+something is wrong on my street,,,True,True,,,,,low,True,Can you please specify what issue you're experiencing on your street?,
+it's a mess outside,,,True,True,,,,,low,True,Can you please describe what specifically is messy outside?,
+I need help,,,True,True,,,,,low,True,Could you please provide more details about the help you need?,
+the city should do something about this,,,True,True,,,,,low,True,Can you please provide more details about the issue you're experiencing?,
