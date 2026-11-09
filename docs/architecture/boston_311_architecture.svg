@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+  <title id="title">Boston 311 forecasting, staffing optimization, and GenAI intake architecture</title>
+  <desc id="desc">Historical Boston 311 data flows into a demand forecasting and staffing optimization pipeline and into a retrieval augmented GenAI intake assistant. Both pipelines produce structured decision outputs.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <style>
+      .title { font: 700 32px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .section { font: 700 20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #1e293b; }
+      .node-title { font: 700 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .node-text { font: 400 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .edge-label { font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .edge { fill: none; stroke: #475569; stroke-width: 2.5; marker-end: url(#arrow); }
+      .future { fill: none; stroke: #64748b; stroke-width: 2.5; stroke-dasharray: 9 7; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1050" fill="#ffffff"/>
+  <text x="800" y="55" text-anchor="middle" class="title">Boston 311 Decision-Support Architecture</text>
+  <text x="800" y="86" text-anchor="middle" class="subtitle">Demand forecasting + constrained staffing optimization + RAG-based resident intake</text>
+
+  <rect x="25" y="115" width="1550" height="430" rx="24" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="55" y="153" class="section">Planning pipeline</text>
+
+  <rect x="25" y="575" width="1550" height="405" rx="24" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="55" y="613" class="section">GenAI intake pipeline</text>
+
+  <!-- Planning sources and transformations -->
+  <rect x="60" y="205" width="235" height="105" rx="16" fill="#eef2ff" stroke="#818cf8" stroke-width="2"/>
+  <text x="178" y="241" text-anchor="middle" class="node-title">Historical 311 Data</text>
+  <text x="178" y="270" text-anchor="middle" class="node-text">2023 and 2024 requests</text>
+  <text x="178" y="292" text-anchor="middle" class="node-text">30 source columns</text>
+
+  <rect x="350" y="205" width="235" height="105" rx="16" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+  <text x="468" y="241" text-anchor="middle" class="node-title">Prepare Data</text>
+  <text x="468" y="270" text-anchor="middle" class="node-text">Clean dates and filter</text>
+  <text x="468" y="292" text-anchor="middle" class="node-text">PWDx · BTDT · PARK · ISD</text>
+
+  <rect x="640" y="205" width="235" height="105" rx="16" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+  <text x="758" y="241" text-anchor="middle" class="node-title">Monthly Demand</text>
+  <text x="758" y="270" text-anchor="middle" class="node-text">Department-month counts</text>
+  <text x="758" y="292" text-anchor="middle" class="node-text">Seasonality analysis</text>
+
+  <rect x="930" y="205" width="260" height="105" rx="16" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+  <text x="1060" y="236" text-anchor="middle" class="node-title">Forecast Comparison</text>
+  <text x="1060" y="264" text-anchor="middle" class="node-text">Seasonal naive · 2-year average</text>
+  <text x="1060" y="286" text-anchor="middle" class="node-text">Trend-adjusted seasonal</text>
+
+  <rect x="1245" y="205" width="275" height="105" rx="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="2.5"/>
+  <text x="1382" y="236" text-anchor="middle" class="node-title">Selected 2025 Forecast</text>
+  <text x="1382" y="264" text-anchor="middle" class="node-text">Two-year seasonal average</text>
+  <text x="1382" y="286" text-anchor="middle" class="node-text">279,343 total requests</text>
+
+  <path class="edge" d="M295 257 H350"/>
+  <path class="edge" d="M585 257 H640"/>
+  <path class="edge" d="M875 257 H930"/>
+  <path class="edge" d="M1190 257 H1245"/>
+
+  <rect x="60" y="385" width="235" height="110" rx="16" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/>
+  <text x="178" y="418" text-anchor="middle" class="node-title">Brief Assumptions</text>
+  <text x="178" y="445" text-anchor="middle" class="node-text">Capacity · cost · starting crews</text>
+  <text x="178" y="467" text-anchor="middle" class="node-text">Lifecycle · penalties · targets</text>
+
+  <rect x="520" y="385" width="295" height="110" rx="16" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="668" y="418" text-anchor="middle" class="node-title">Mixed-Integer Optimization</text>
+  <text x="668" y="445" text-anchor="middle" class="node-text">Minimize staffing + seasonal +</text>
+  <text x="668" y="467" text-anchor="middle" class="node-text">release + backlog costs</text>
+
+  <rect x="925" y="385" width="265" height="110" rx="16" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="1058" y="418" text-anchor="middle" class="node-title">Monthly Staffing Plan</text>
+  <text x="1058" y="445" text-anchor="middle" class="node-text">Crews · hires · releases</text>
+  <text x="1058" y="467" text-anchor="middle" class="node-text">Backlog · service · cost</text>
+
+  <rect x="1260" y="385" width="260" height="110" rx="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="1390" y="418" text-anchor="middle" class="node-title">Decision Outputs</text>
+  <text x="1390" y="445" text-anchor="middle" class="node-text">CSVs · dashboards · report</text>
+  <text x="1390" y="467" text-anchor="middle" class="node-text">Low · baseline · high scenarios</text>
+
+  <path class="edge" d="M178 310 V385"/>
+  <path class="edge" d="M295 440 H520"/>
+  <path class="edge" d="M1382 310 V345 H668 V385"/>
+  <path class="edge" d="M815 440 H925"/>
+  <path class="edge" d="M1190 440 H1260"/>
+
+  <!-- GenAI pipeline -->
+  <rect x="60" y="680" width="235" height="105" rx="16" fill="#eef2ff" stroke="#818cf8" stroke-width="2"/>
+  <text x="178" y="716" text-anchor="middle" class="node-title">Historical 311 Labels</text>
+  <text x="178" y="745" text-anchor="middle" class="node-text">Types · departments · queues</text>
+  <text x="178" y="767" text-anchor="middle" class="node-text">Reasons · subjects · sources</text>
+
+  <rect x="350" y="680" width="235" height="105" rx="16" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+  <text x="468" y="716" text-anchor="middle" class="node-title">Reference List</text>
+  <text x="468" y="745" text-anchor="middle" class="node-text">Clean and de-duplicate types</text>
+  <text x="468" y="767" text-anchor="middle" class="node-text">Most common department + queue</text>
+
+  <rect x="640" y="680" width="235" height="105" rx="16" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+  <text x="758" y="716" text-anchor="middle" class="node-title">Embedding Index</text>
+  <text x="758" y="745" text-anchor="middle" class="node-text">text-embedding-3-small</text>
+  <text x="758" y="767" text-anchor="middle" class="node-text">Searchable request-type vectors</text>
+
+  <rect x="60" y="850" width="235" height="90" rx="16" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/>
+  <text x="178" y="884" text-anchor="middle" class="node-title">Resident Message</text>
+  <text x="178" y="913" text-anchor="middle" class="node-text">Plain-language service issue</text>
+
+  <rect x="640" y="850" width="235" height="90" rx="16" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+  <text x="758" y="884" text-anchor="middle" class="node-title">Top-8 Retrieval</text>
+  <text x="758" y="913" text-anchor="middle" class="node-text">Closest real request types</text>
+
+  <rect x="930" y="850" width="260" height="90" rx="16" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="1060" y="884" text-anchor="middle" class="node-title">Structured Classification</text>
+  <text x="1060" y="913" text-anchor="middle" class="node-text">gpt-4o-mini + enforced schema</text>
+
+  <rect x="1245" y="850" width="275" height="90" rx="16" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="1382" y="880" text-anchor="middle" class="node-title">Intake Result</text>
+  <text x="1382" y="907" text-anchor="middle" class="node-text">Type · department · queue</text>
+  <text x="1382" y="929" text-anchor="middle" class="node-text">or a follow-up question</text>
+
+  <path class="edge" d="M295 732 H350"/>
+  <path class="edge" d="M585 732 H640"/>
+  <path class="edge" d="M178 850 V822 H758 V850"/>
+  <path class="edge" d="M758 785 V850"/>
+  <path class="edge" d="M875 895 H930"/>
+  <path class="edge" d="M1190 895 H1245"/>
+
+  <path class="future" d="M1382 850 V610 H830 V310"/>
+  <rect x="1000" y="620" width="300" height="30" rx="8" fill="#ffffff"/>
+  <text x="1150" y="641" text-anchor="middle" class="edge-label">Future: live intake updates demand planning</text>
+</svg>

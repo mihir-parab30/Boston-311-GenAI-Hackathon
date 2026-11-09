@@ -1,0 +1,42 @@
+flowchart LR
+    subgraph Sources[Data and user inputs]
+        H[2023 and 2024 Boston 311 records]
+        R[Resident plain-language message]
+        A[Brief staffing assumptions]
+    end
+
+    subgraph Planning[Demand planning and optimization]
+        P1[Clean and filter four departments]
+        P2[Aggregate monthly demand]
+        P3[Compare three forecast methods]
+        P4[Two-year seasonal-average forecast]
+        P5[Mixed-integer staffing optimization]
+        P6[Monthly crews, hires, releases, backlog and cost]
+        P7[Low, baseline and high demand scenarios]
+    end
+
+    subgraph Intake[GenAI intake assistant]
+        G1[Clean and de-duplicate request types]
+        G2[Embedding reference index]
+        G3[Retrieve top eight candidates]
+        G4[OpenAI structured classification]
+        G5[Type, department and queue or follow-up question]
+    end
+
+    subgraph Outputs[Decision outputs]
+        O1[Forecast and staffing CSV files]
+        O2[Dashboards and final report]
+        O3[Routed 311 intake result]
+    end
+
+    H --> P1 --> P2 --> P3 --> P4 --> P5 --> P6
+    A --> P5
+    P4 --> P7 --> P5
+    P6 --> O1
+    P6 --> O2
+
+    H --> G1 --> G2
+    R --> G3
+    G2 --> G3 --> G4 --> G5 --> O3
+
+    O3 -. future department-load integration .-> P2

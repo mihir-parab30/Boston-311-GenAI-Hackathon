@@ -63,6 +63,19 @@ See [`genai_assistant/README.md`](genai_assistant/README.md) for setup and usage
 
 ![Demand sensitivity dashboard](outputs/boston_311_sensitivity_dashboard.png)
 
+## System Architecture
+
+![Boston 311 system architecture](docs/architecture/boston_311_architecture.svg)
+
+The editable Mermaid source is available at
+[`docs/architecture/boston_311_architecture.mmd`](docs/architecture/boston_311_architecture.mmd).
+
+## Final Report
+
+The complete analysis, results, limitations, recommendations, team
+contributions, and AI-use disclosure are documented in the
+[`Boston 311 Final Report`](docs/report/Boston_311_Final_Report.md).
+
 ## Repository Structure
 
 ```text
@@ -82,6 +95,11 @@ Boston-311-GenAI-Hackathon/
 │   ├── forecast and staffing CSV files
 │   └── dashboard images
 ├── docs/
+│   ├── architecture/
+│   │   ├── boston_311_architecture.svg
+│   │   └── boston_311_architecture.mmd
+│   └── report/
+│       └── Boston_311_Final_Report.md
 ├── requirements.txt
 ├── .env.example
 ├── .gitignore
