@@ -155,24 +155,17 @@ order. Never commit an API key or completed `.env` file.
 - Zero starting backlog and zero year-end backlog
 - Low and high demand scenarios at ±20% of baseline
 
-## Project Status
-
-| Component | Status |
-|---|---|
-| Demand forecasting | Complete |
-| Baseline staffing model | Complete |
-| Staffing optimization | Complete |
-| Demand sensitivity analysis | Complete |
-| GenAI intake assistant | Complete; final teammate verification recommended |
-| Output CSVs and dashboards | Complete |
-| Final report | In progress |
-| Architecture diagram | Pending |
-| Demo video | Pending |
-
 ## Team
 
-- **Mihir Parab** — demand forecasting and staffing optimization
-- **Srushti** — GenAI intake assistant
+- **Fatma Koksal** — historical data preparation, exploratory demand analysis,
+  forecasting-method evaluation, and monthly Boston 311 demand forecasting for
+  2025.
+- **Mihir Parab** — staffing capacity modeling, baseline and optimized workforce
+  planning, cost and service-level optimization, sensitivity analysis, and
+  staffing-result visualizations.
+- **Srishti Rajpurohit** — Live Agent GenAI intake assistant, including
+  retrieval-augmented generation, structured request classification, queue
+  routing, follow-up-question logic, and assistant evaluation.
 
 ## Responsible Use
 
